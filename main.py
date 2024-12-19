@@ -22,7 +22,7 @@ def process_lecture(course_id, lecture_id, duration=DEFAULT_LECTURE_DURATION):
     order = 1
     is_complete = False
     start_time = datetime.now()
-    interval = 30  # minimum control window
+    interval = 60 * 2
 
     while not is_complete:
         byte_rate = random.uniform(1000000, 10000000)  # 1-10 MB/s
@@ -65,7 +65,7 @@ def process_lecture(course_id, lecture_id, duration=DEFAULT_LECTURE_DURATION):
             is_complete = True
         
         order += 1
-        time.sleep(interval)
+        time.sleep(30)
 
 def main():
     courses = load_course_lectures()
